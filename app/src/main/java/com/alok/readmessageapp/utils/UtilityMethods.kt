@@ -2,6 +2,8 @@ package com.alok.readmessageapp.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
+import java.lang.Long
 
 
 /**
@@ -49,10 +51,10 @@ class UtilityMethods{
         fun isPromotionalMsg (str: String): Boolean{
             var isPromotioanl = false
             try {
-                val num = Integer.parseInt(str.trim()
-                    .replace("+","")
-                    .replace("-",""))
+                var newStr = str.trim().replace("+","").replace("-","")
+                Long.parseLong(newStr)
             } catch (e: NumberFormatException) {
+                Log.d("UtilityMethods", "exception: ${e.printStackTrace()}")
                 isPromotioanl = true
             }
             return isPromotioanl
