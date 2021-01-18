@@ -1,0 +1,56 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="messageInfoItem"
+            type="com.alok.readmessageapp.room.MessageInfo" />
+
+        <import type="com.alok.androidexcersise.view.adapter.MessageListAdapter"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/screen_margin"
+        android:layout_marginRight="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/cardview_corner_radious"
+        android:layout_marginBottom="@dimen/cardview_corner_radious"
+        app:cardCornerRadius="@dimen/cardview_corner_radious"
+        app:cardElevation="@dimen/cardview_elevation"
+        app:contentPadding="@dimen/padding"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textviewSender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_large"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{messageInfoItem.sender,default=`Sender`}" />
+
+            <TextView
+                android:id="@+id/textviewMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/textsize_normal"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{messageInfoItem.msgBody,default=`Sender`}" />
+
+            <TextView
+                android:id="@+id/textviewTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_small"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-light"
+                android:text="@{MessageListAdapter.getDateFormat(messageInfoItem.date)}" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

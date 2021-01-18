@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="screen_margin">4dp</dimen>
+    <dimen name="cardview_corner_radious">2dp</dimen>
+    <dimen name="cardview_elevation">4dp</dimen>
+    <dimen name="padding">8dp</dimen>
+
+    <dimen name="textsize_large">16sp</dimen>
+    <dimen name="textsize_normal">14sp</dimen>
+    <dimen name="textsize_small">12sp</dimen>
+</resources>
